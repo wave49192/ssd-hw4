@@ -39,7 +39,7 @@ public class Game extends Observable {
 
 	public void tick() {
 		long currentTime = new Date().getTime();
-		if (currentTime - startingTime >= 30000 && bullets.size() < 30) {
+		if (currentTime - startingTime >= 30000 && bullets.size() > 30) {
 			bulletPool.setDefault();
 			startingTime = new Date().getTime();
 		} else if (bullets.size() > 30 && currentTime - startingTime <= 30000) {
